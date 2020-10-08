@@ -1,8 +1,8 @@
-name: Deploy website to vps
+name: Deploy website to heroku
 on:
-  merge:
+  push:
     branches:
-      - master
+      - preprod
 jobs:
   Deploy:
     name: Lint, Build and Deploy
@@ -21,13 +21,9 @@ jobs:
         uses: jzweifel/gatsby-cli-github-action@master
         with:
           gatsby-arg: build
-      - name: Copy repository contents via scp
-        uses: appleboy/scp-action@master
-        env:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSHKEY }}
+      - name: deploy heroku
+        uses: akhileshns/heroku-deploy@v3.5.7 # This is the action
         with:
-          source: "./public"
-          target: "/var/www/alexandrehaas.fr"
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
