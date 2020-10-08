@@ -1,0 +1,213 @@
+$color-body: #2e3131;
+$color-sun: #f1981c;
+$color-orange: #ea5237;
+$color-text: #ededed;
+$color-footer: #191919;
+$color-header: #262626;
+$radius-corner: 10px;
+$radius-full: 1000px;
+
+html{
+  font-size: 16px;
+}
+
+body {
+  line-height: 1.2;
+  font-family: "Rubik", sans-serif;
+  color: $color-text;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p{
+  font-size: inherit;
+  line-height: inherit;
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  background-color: $color-body;
+}
+
+#content-wrap {
+  padding-top: 50px; /* Header height*/
+  padding-bottom: 155px; /* Footer height + margin*/
+}
+
+.container{
+  display: block;
+  width: auto;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px; /* Footer height */
+  margin-bottom: 55px;
+  background-color: $color-footer;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: $color-header;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.header-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  object-position: center;
+}
+
+header > nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+  background-color: $color-header;
+  flex: 1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+}
+
+.header-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+}
+
+.header-list > li {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  flex: 1;
+}
+
+.header-list > li > a {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: $color-sun;
+  font-weight: 700;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  padding: 10px 5px;
+  margin: 10px 5px;
+}
+
+.header-list > li > a:hover {
+  color: $color-orange;
+  text-decoration: none;
+}
+
+.header-list > li > a.header-active {
+  color: $color-orange;
+  position: relative;
+}
+
+.header-list > li > a > .header-indicator {
+  display: none;
+}
+
+.header-list > li > a.header-active > .header-indicator {
+  display: block;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 90%;
+  height: 2px;
+  background-color: $color-orange;
+}
+
+.text-sunset-gradient{
+    background: linear-gradient(90deg, $color-sun, $color-orange);
+    color: $color-text;
+    display: block;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -o-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 1rem auto 0 auto;
+}
+.text-sunset-gradient::after{
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 0.5rem;
+  background: linear-gradient(90deg, $color-sun, $color-orange);
+  border-radius: $radius-full;
+  margin: 1rem auto;
+}
+
+.text-title{
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  #content-wrap {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  #footer {
+    margin-bottom: unset;
+  }
+  header {
+    justify-content: space-between;
+  }
+  .header-logo {
+    height: 80px;
+    width: 80px;
+  }
+  header > nav {
+    width: unset;
+    background-color: unset;
+    flex: 1;
+    position: static;
+  }
+  .header-list > li > a {
+    font-size: 1rem;
+    padding: 0;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+}
