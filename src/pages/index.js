@@ -11,6 +11,7 @@ const IndexPage = () => (
         Freelance, développeur web front-end junior.
       </h1>
       <p className="mt-3">Site en développement...</p>
+      <p className="mt-3">Test CI/CD 1</p>
     </div>
   </Layout>
 )

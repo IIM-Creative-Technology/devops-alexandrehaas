@@ -1,0 +1,44 @@
+name: Deploy website to vps
+on:
+    push:
+        branches:
+            - master
+jobs:
+    lint:
+        name: Lint with ESlint
+        runs-on: ubuntu-18.04.4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: install node v12
+              uses: actions/setup-node@v1
+                with:
+                  node-version: 12
+            - name: eslint
+              uses: icrawl/action-eslint@v1
+    build:
+        name: Build with gatsby-cli
+        runs-on: ubuntu-18.04.4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Build Gatsby Site
+              uses: jzweifel/gatsby-cli-github-action@master
+              with:
+                gatsby-arg: build
+    deploy:
+        name: Deploy
+        runs-on: ubuntu-18.04.4
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Copy repository contents via scp
+              uses: appleboy/scp-action@master
+              env:
+                HOST: ${{ secrets.HOST }}
+                USERNAME: ${{ secrets.USERNAME }}
+                PORT: ${{ secrets.PORT }}
+                KEY: ${{ secrets.SSHKEY }}
+              with:
+                source: "./public"
+                target: "/var/www/alexandrehaas.fr"
