@@ -30,4 +30,4 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
         with:
           source: "./public"
-          target: "/var/www/alexandrehaas.fr"
+          target: "/testdeploy"
