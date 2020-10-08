@@ -4,6 +4,9 @@ Ce projet est le début de mon site personnel créer avec Gatsby.
 
 La mise en place de cette CI/CD va me permettre de gagner beaucoup de temps sur les tests et déploiements du site.
 
+Lien Prod : [alexandrehaas.fr](https://alexandrehaas.fr/)
+Lien PréProd : [preprod-alexandrehaas.herokuapp.com](https://preprod-alexandrehaas.herokuapp.com/)
+
 ## CI Sur les pull requests
 
 A chaque pull request sur la branche [master](https://github.com/IIM-Creative-Technology/devops-alexandrehaas/tree/master) ou [preprod](https://github.com/IIM-Creative-Technology/devops-alexandrehaas/tree/preprod), un lint est éffectué sur le code afin de vérifier sa conformité.
