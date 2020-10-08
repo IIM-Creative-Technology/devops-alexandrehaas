@@ -10,7 +10,7 @@ A chaque pull request sur la branche [master](https://github.com/IIM-Creative-Te
 
 ## CD au merge / push sur preprod
 
-Lorsque la pull request est validée, le merge déclenche un lint puis déploie directement sur [Heroku](https://dashboard.heroku.com/apps). Le build du site se fait directement sur Heroku via le **buildpack node** ainsi que le **buldpack static** afin de définir le poit d'entré du site une fois compilé grâcte au fichier **static.json**.
+Lorsque la pull request est validée, le merge déclenche un lint puis déploie directement sur [Heroku](https://dashboard.heroku.com/apps). Le build du site se fait directement sur Heroku via le **buildpack node** ainsi que le **buldpack static** afin de définir le poit d'entré du site une fois compilé grâce au fichier **static.json**.
 
 ## CD au merge / push sur master
 
