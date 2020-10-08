@@ -1,6 +1,6 @@
 name: Deploy website to vps
 on:
-  merge:
+  push:
     branches:
       - master
 jobs:

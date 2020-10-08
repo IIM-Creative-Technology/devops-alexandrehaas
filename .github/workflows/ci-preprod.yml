@@ -1,11 +1,11 @@
-name: Deploy website to heroku
+name: CI on  preprod pull request
 on:
-  push:
+  pull_request:
     branches:
       - preprod
 jobs:
   Deploy:
-    name: Lint, Build and Deploy
+    name: Lint
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
@@ -17,9 +17,3 @@ jobs:
       - run: npm install
       - name: eslint
         uses: icrawl/action-eslint@v1
-      - name: deploy heroku
-        uses: akhileshns/heroku-deploy@v3.5.7 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP}}
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
