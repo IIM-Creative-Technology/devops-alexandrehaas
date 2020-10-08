@@ -12,6 +12,7 @@ const IndexPage = () => (
       </h1>
       <p className="mt-3">Site en développement...</p>
       <p className="mt-3">Test CI/CD 1</p>
+      <p className="mt-3">Je suis la feature de texte dans la home</p>
     </div>
   </Layout>
 )
