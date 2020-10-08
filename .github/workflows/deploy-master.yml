@@ -6,7 +6,7 @@ on:
 jobs:
   lint:
     name: Lint with ESlint
-    runs-on: ubuntu-18.04.4
+    runs-on: ubuntu-18.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
